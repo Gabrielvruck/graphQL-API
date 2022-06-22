@@ -1,0 +1,14 @@
+const{ gql } = require('apollo-server')
+
+const vavaSchema = gql `
+    type Armas {
+        nome:String!
+    }
+
+   type Query  {
+       vava:[Armas]
+       primeiroArma:Armas
+   }
+`
+
+module.exports = vavaSchema

@@ -1,0 +1,23 @@
+npm install
+npx json-server --watch (+ json de dados)
+npm install graphql
+npm install apollo-server
+npm install graphql-tools
+npm install apollo-datasource-rest
+
+npm start
+
+https://www.apollographql.com/docs/apollo-server/
+
+https://github.com/cvburgess/SQLDataSource para bancos SQL
+https://www.apollographql.com/blog/backend/data-sources/a-deep-dive-on-apollo-data-sources/
+
+https://docs.github.com/pt/graphql/overview/explorer 
+
+
+
+
+https://chillicream.com/docs/hotchocolate/get-started (leo)
+
+
+Quando for colocar role tem que ser exatamente igual  no type exemplo "DOCENTE","ESTUDANTE"
