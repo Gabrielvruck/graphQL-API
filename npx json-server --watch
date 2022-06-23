@@ -21,3 +21,8 @@ https://chillicream.com/docs/hotchocolate/get-started (leo)
 
 
 Quando for colocar role tem que ser exatamente igual  no type exemplo "DOCENTE","ESTUDANTE"
+
+
+/*
+ Mesmo nome que da pro type na hora de criar o resolver tem que ser com mesmo nome criado no schema
+*/

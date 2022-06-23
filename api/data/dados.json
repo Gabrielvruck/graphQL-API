@@ -53,6 +53,38 @@
       "email": "jacv@gmail.com",
       "role": 1,
       "id": 8
+    },
+    {
+      "nome": "marinalva",
+      "ativo": true,
+      "email": "jma@gmail.com",
+      "role": 1,
+      "createdAt": "2022-06-23T00:00:00.000Z",
+      "id": 9
+    },
+    {
+      "nome": "marinalva 32",
+      "ativo": true,
+      "email": "jma32@gmail.com",
+      "role": 3,
+      "createdAt": "2022-06-23T00:00:00.000Z",
+      "id": 10
+    },
+    {
+      "nome": "mari2nal32va 32",
+      "ativo": true,
+      "email": "jma322@gmail.com",
+      "role": 3,
+      "createdAt": "2022-06-23T00:00:00.000Z",
+      "id": 11
+    },
+    {
+      "nome": "gokuuu",
+      "ativo": true,
+      "email": "goku@gmail.com",
+      "role": 3,
+      "createdAt": "2022-06-25T00:00:00.000Z",
+      "id": 12
     }
   ],
   "roles": [
