@@ -1,22 +1,36 @@
 const{ gql } = require('apollo-server')
 
 const userSchema = gql `
+# /*
+#  Mesmo nome que da pro type na hora de criar o resolver tem que ser com mesmo nome criado no schema
+# */
+scalar DateTime
+
     type User {
         nome:String!
         ativo:Boolean!
         email:String
         role:Role!
+        createdAt:DateTime
     }
 
-#    type Query  {
-#        users:[User]
-#        primeiroUser:User
-      
-#    }
+    input UserInput{
+        nome:String
+        ativo:Boolean
+        email:String
+        role:RolesType
+        createdAt:DateTime
+    }
 
     type Role {
         id:ID!
-        type:String!
+        type:RolesType!
+    }
+
+    enum RolesType{
+        ESTUDANTE
+        DOCENTE
+        COORDENACAO
     }
 
     type Query  {
@@ -25,23 +39,28 @@ const userSchema = gql `
    }
 
    type Mutation {
-       adicionarUser(
-           nome:String!,
-           ativo:Boolean!,
-           email:String, 
-           role:String!
-           ):User!
+        # eu estou dizendo que irei adicionar usuario to tipo :User
+        adicionarUser(user:UserInput):User!
 
-            atualizarUser(
-                id:ID!
-           nome:String!,
-           ativo:Boolean!,
-           email:String, 
-           role:String!
-           ):User!
+        atualizarUser(id:ID!,user:UserInput):atualizarUserResposta!
 
-        deletaUser(id:ID!):ID!   
+        deletaUser(id:ID!):deletaUserResposta!   
    }
-`
 
+    interface respostaCustom{
+        #tipo abstrado
+        code:Int!
+        mensagem:String!
+    }
+    type deletaUserResposta implements respostaCustom{
+        code:Int!
+        mensagem:String!
+    }
+
+     type atualizarUserResposta implements respostaCustom{
+        code:Int!
+        mensagem:String!
+        user:User!
+    }
+`
 module.exports = userSchema
