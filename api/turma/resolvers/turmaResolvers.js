@@ -2,14 +2,14 @@ const {GraphQLScalarType} = require('graphql')
 
 const turmaResolvers = {
     Query:{
-        turmas: (root,args,{dataSources},info)=>{
+        turmas: (_,__,{dataSources},info)=>{
             console.log(info)
-            return dataSources.usersAPI.getUsers()
-        },
-        turma: (root,{id},{dataSources},info)=>{
-            console.log(info)
-            return dataSources.usersAPI.getUserById(id)
+            return dataSources.turmasAPI.getTurmas()
         }
+        // turma: (root,{id},{dataSources},info)=>{
+        //     console.log(info)
+        //     return dataSources.usersAPI.getUserById(id)
+        // }
     }
 }
 module.exports = turmaResolvers
